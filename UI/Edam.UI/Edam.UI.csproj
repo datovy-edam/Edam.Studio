@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>Edam.UI</RootNamespace>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="CommunityToolkit.Common" Version="7.1.2" />
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
+      <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.230118.102" />
+      <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Edam.Data.Assets">
+      <HintPath>..\..\..\..\Edam.Libraries\Data\Edam.Data.Assets\bin\Debug\net6.0\Edam.Data.Assets.dll</HintPath>
+    </Reference>
+    <Reference Include="Edam.DataObjects">
+      <HintPath>..\..\..\..\Edam.Libraries\Data\Edam.DataObjects\bin\Debug\net6.0\Edam.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Edam.System">
+      <HintPath>..\..\..\..\Edam.Libraries\System\Edam.System\bin\Debug\net6.0\Edam.System.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
