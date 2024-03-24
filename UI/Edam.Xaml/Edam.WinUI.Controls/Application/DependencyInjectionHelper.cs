@@ -15,6 +15,8 @@ using Edam.Data.Schema.ImportExport;
 using Edam.B2b;
 using UIApp = Edam.Application.Settings;
 
+using languages = Edam.Language;
+
 namespace Edam.WinUI.Helpers
 {
 
@@ -38,15 +40,19 @@ namespace Edam.WinUI.Helpers
                      (new ApplicationResource())));
          DependencyService.Compile();
 
-         AppAssembly.RegisterType(AssetResourceHelper.ASSET_B2B_EDI_FILE_READER,
-            typeof(EdiFileReader), "EdiToAssets");
+         AppAssembly.RegisterType(
+            AssetResourceHelper.ASSET_B2B_EDI_FILE_READER,
+            typeof(EdiFileReader), 
+            "EdiToAssets");
          AppAssembly.RegisterType(
             AssetResourceHelper.ASSET_APP_SETTINGS,
-            typeof(UIApp.AppSettings), AppSettings.APP_SETTINGS_SECTION_KEY);
+            typeof(UIApp.AppSettings), 
+            AppSettings.APP_SETTINGS_SECTION_KEY);
          AppAssembly.RegisterType(
             AssetResourceHelper.ASSET_DDL_IMPORT_FILE_READER,
             typeof(ImportReader), 
             AssetConsoleProcedure.DdlImportToAssets.ToString());
+
          AppAssembly.RegisterType(AssetResourceHelper.ASSET_MAPPING_LANGUAGE, 
             typeof(MapLanguageInfo), 
             AssetResourceHelper.ASSET_MAPPING_LANGUAGE);
@@ -58,6 +64,9 @@ namespace Edam.WinUI.Helpers
          AppAssembly.RegisterType(
             AssetResourceHelper.ASSET_LEXICON,
             typeof(Edam.Data.Lexicon.LexiconData));
+         AppAssembly.RegisterType(
+            languages.LanguageHelper.LANGUAGE_PHYTHON,
+            typeof(Edam.Language.Python.Interpreter));
 
       }
 

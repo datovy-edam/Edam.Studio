@@ -106,6 +106,9 @@
     <Reference Include="Edam.DataObjects">
       <HintPath>..\..\..\Edam.Libraries\Data\Edam.DataObjects\bin\Debug\net6.0\Edam.DataObjects.dll</HintPath>
     </Reference>
+    <Reference Include="Edam.Language.Python">
+      <HintPath>..\..\..\Edam.Libraries\AI\Edam.Language.Python\bin\Debug\net6.0\Edam.Language.Python.dll</HintPath>
+    </Reference>
     <Reference Include="Edam.Security">
       <HintPath>..\..\..\Edam.Libraries\System\Edam.Security\bin\Debug\net6.0\Edam.Security.dll</HintPath>
     </Reference>

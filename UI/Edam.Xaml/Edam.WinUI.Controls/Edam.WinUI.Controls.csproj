@@ -303,6 +303,9 @@
     <Reference Include="Edam.Json">
       <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Json\bin\Debug\net6.0\Edam.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Edam.Language.Python">
+      <HintPath>..\..\..\..\..\Edam.Libraries\AI\Edam.Language.Python\bin\Debug\net6.0\Edam.Language.Python.dll</HintPath>
+    </Reference>
     <Reference Include="Edam.System">
       <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Assets\bin\Debug\net6.0\Edam.System.dll</HintPath>
     </Reference>
