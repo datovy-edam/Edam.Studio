@@ -21,7 +21,6 @@ using Edam.Data.Books;
 using System.Data.SqlClient;
 using Edam.Data.AssetUseCases;
 using Edam.Json.JsonQuery;
-using Edam.Data.Assets.Lexicon;
 using Edam.Data.Lexicon;
 
 namespace Edam.WinUI.Controls.DataModels
@@ -49,10 +48,15 @@ namespace Edam.WinUI.Controls.DataModels
    /// <summary>
    /// Data Use Case Map Context to identify left (A) and right (B) sources.
    /// </summary>
-   public class DataMapContext : ObservableObject
+   public class DataMapContext : ObservableObject, IDataMapContext
    {
 
       #region -- 1.00 - Properties, and Fields declaration
+
+      public object Instance
+      {
+         get { return this; }
+      }
 
       private string m_ContextId = Guid.NewGuid().ToString();
       public string ContextId
@@ -87,6 +91,8 @@ namespace Edam.WinUI.Controls.DataModels
       public DataTreeEvent ManageNotification { get; set; }
 
       public BookViewModel BookModel { get; set; }
+      public LexiconDataModel LexiconModel { get; set; } =
+         new LexiconDataModel();
 
       private ListView m_ListView = null;
       public ListView BookletViewList
@@ -241,7 +247,7 @@ namespace Edam.WinUI.Controls.DataModels
             {
                Instance = source
             };
-            sourceInstance.SetupContext(ProjectContext.Arguments);
+            sourceInstance.SetContext(ProjectContext.Arguments);
 
             newContext = new DataMapContext()
             {
@@ -642,7 +648,7 @@ namespace Edam.WinUI.Controls.DataModels
             // try to load self
             var selfArgs = ProjectContext.GetArgumentsByProcessName(
                context.Source.Arguments.Process.Name);
-            context.Target.SetupContext(selfArgs);
+            context.Target.SetContext(selfArgs);
             return selfArgs == null ? null : context;
          }
 
@@ -664,7 +670,7 @@ namespace Edam.WinUI.Controls.DataModels
          // item was found... setup target arguments
          var args = ProjectContext.GetArgumentsByProcessName(
             item.ParentProcessName);
-         context.Target.SetupContext(args);
+         context.Target.SetContext(args);
          return context;
       }
 
@@ -820,6 +826,33 @@ namespace Edam.WinUI.Controls.DataModels
          {
             RefreshMapItem();
          }
+      }
+
+      #endregion
+      #region 4.00 - Lexicon Support
+
+      /// <summary>
+      /// Semantic Text Compare on selected booklet map item.
+      /// </summary>
+      /// <param name="booklet">booklet that contains elements to be compared
+      /// </param>
+      public void LexiconSemanticTextCompare(BookletInfo booklet)
+      {
+         LexiconModel.SetContext(this);
+         LexiconModel.Compare(booklet);
+      }
+
+      /// <summary>
+      /// Semantic Text Compare on selected booklet map item using given model.
+      /// </summary>
+      /// <param name="booklet">booklet that contains elements to be compared
+      /// </param>
+      /// <param name="model">given model</param>
+      public void LexiconSemanticTextCompare(
+         BookletInfo booklet, LexiconDataModel model)
+      {
+         LexiconModel = model;
+         LexiconSemanticTextCompare(booklet);
       }
 
       #endregion

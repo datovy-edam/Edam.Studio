@@ -48,6 +48,7 @@ namespace Edam.WinUI.Controls.Booklets
          this.InitializeComponent();
          DataContext = m_ViewModel;
          m_ViewModel.ManageEvent = ManageNotification;
+         TextSimilarityScoreViewer.Visibility = Visibility.Collapsed;
       }
 
       public ListView GetListView()
@@ -78,20 +79,27 @@ namespace Edam.WinUI.Controls.Booklets
          {
             m_ViewModel.DeleteCell(args.EventData);
          }
-         else if (args.Type == NotificationType.ExecuteItem)
+         else if (args.Type == NotificationType.ExecuteItem && 
+            args.MessageText == LexiconDataModel.TEXT_SIMILARITY)
          {
-
+            TextSimilarityScoreViewer.Visibility = Visibility.Visible;
          }
       }
 
       public void ManageNotification(object sender, DataTreeEventArgs args)
       {
          MapSidePanel.ViewModel.ManageNotification(sender, args);
+         TextSimilarityScoreViewer.Visibility = Visibility.Collapsed;
       }
 
       public void SetContext(DataMapContext context)
       {
          context.BookletViewList = BookletList;
+         context.LexiconModel.ManageNotification =
+            ManageNotification;
+         TextSimilarityScoreViewer.ViewModel.ManageNotification =
+            ManageNotification;
+
          ViewModel.SetContext(context);
          MapSidePanel.ViewModel.Context = context;
       }
@@ -120,6 +128,20 @@ namespace Edam.WinUI.Controls.Booklets
       private void ExecuteBooklet_Click(object sender, RoutedEventArgs e)
       {
          ViewModel.Context.Execute(ViewModel.Model.SelectedBooklet);
+      }
+
+      private void SemanticSimilarityCompare_Click(
+         object sender, RoutedEventArgs e)
+      {
+         if (TextSimilarityScoreViewer.Visibility == Visibility.Visible)
+         {
+            TextSimilarityScoreViewer.Visibility = Visibility.Collapsed;
+            return;
+         }
+
+         ViewModel.Context.LexiconSemanticTextCompare(
+            ViewModel.Model.SelectedBooklet, 
+            TextSimilarityScoreViewer.ViewModel);
       }
 
    }

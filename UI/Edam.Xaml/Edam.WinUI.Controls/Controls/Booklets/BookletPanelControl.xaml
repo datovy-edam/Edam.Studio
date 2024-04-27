@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:am="using:Edam.WinUI.Controls.Assets"
     xmlns:tk="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:lx="using:Edam.WinUI.Controls.Lexicon"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
@@ -23,6 +24,7 @@
             <ColumnDefinition Width="*" />
          </Grid.ColumnDefinitions>
          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
@@ -45,6 +47,9 @@
                   </MenuBarItemFlyout>
                </AppBarButton.Flyout>
             </AppBarButton>
+            <AppBarButton Icon="Remote" LabelPosition="Collapsed" Padding="0" Width="40"
+                       Click="SemanticSimilarityCompare_Click" ToolTipService.ToolTip="Semantic Similarity Compare"
+                       Foreground="Blue"/>
             <AppBarButton Icon="Play" LabelPosition="Collapsed" Padding="0" Width="40"
                        Click="ExecuteBooklet_Click" ToolTipService.ToolTip="Execute Booklet"
                        Foreground="Green"/>
@@ -53,12 +58,16 @@
                        Foreground="Brown"/>-->
          </StackPanel>
 
-         <ScrollViewer Grid.Row="1" Grid.Column="0">
+         <lx:TextSimilarityScoreViewerControl Grid.Row="1" Grid.Column="0"
+            x:Name="TextSimilarityScoreViewer"
+            />
+         
+         <ScrollViewer Grid.Row="2" Grid.Column="0">
             <ListView SelectionMode="Single" x:Name="BookletList"
                       SelectionChanged="BookletList_SelectionChanged" />
          </ScrollViewer>
 
-         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="0,6,0,5"
+         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Margin="0,6,0,5"
                      HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <TextBlock Text="Add" VerticalAlignment="Center" />
             <HyperlinkButton Content="+ Text" Click="AddTextCell_Click" Padding="3,0"/>

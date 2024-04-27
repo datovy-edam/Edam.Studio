@@ -16,6 +16,8 @@ using Edam.B2b;
 using UIApp = Edam.Application.Settings;
 
 using languages = Edam.Language;
+using Edam.Data.Lexicon;
+using Edam.Data.Lexicon.Semantics;
 
 namespace Edam.WinUI.Helpers
 {
@@ -67,6 +69,13 @@ namespace Edam.WinUI.Helpers
          AppAssembly.RegisterType(
             languages.LanguageHelper.LANGUAGE_PHYTHON,
             typeof(Edam.Language.Python.Interpreter));
+         AppAssembly.RegisterType(
+            TextSimilarityService.SEMANTIC_TEXT_SIMILARITY_INSTANCE,
+            typeof(TextSimilarityInstance));
+
+         AppAssembly.RegisterType(
+            AssetResourceHelper.ASSET_DICTIONARY_API,
+            typeof(Edam.Data.Dictionary.Api.FreeDictionaryApi));
 
       }
 

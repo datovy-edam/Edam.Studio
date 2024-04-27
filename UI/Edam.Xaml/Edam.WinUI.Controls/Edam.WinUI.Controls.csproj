@@ -31,6 +31,7 @@
     <None Remove="Controls\Entities\EntityGroupControl.xaml" />
     <None Remove="Controls\Booklets\BookletCodeCellControl.xaml" />
     <None Remove="Controls\Booklets\FramePanelControl.xaml" />
+    <None Remove="Controls\Lexicon\TextSimilarityScoreViewerControl.xaml" />
     <None Remove="Controls\Projects\ProjectFileEditorControl.xaml" />
     <None Remove="Controls\Projects\ProjectSidePanelControl.xaml" />
     <None Remove="Controls\Projects\ProjectViewerControl.xaml" />
@@ -59,9 +60,13 @@
 
   <ItemGroup>
       <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
+      <PackageReference Include="DocumentFormat.OpenXml" Version="2.19.0" />
+      <PackageReference Include="Jsonata.Net.Native" Version="2.4.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.25" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
       <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.230118.102" />
       <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+      <PackageReference Include="pythonnet" Version="3.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -288,6 +293,9 @@
     <Reference Include="Edam.Data.Assets">
       <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Assets\bin\Debug\net6.0\Edam.Data.Assets.dll</HintPath>
     </Reference>
+    <Reference Include="Edam.Data.Dictionary">
+      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Dictionary\bin\Debug\net6.0\Edam.Data.Dictionary.dll</HintPath>
+    </Reference>
     <Reference Include="Edam.Data.Lexicon">
       <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Vocabulary\bin\Debug\net6.0\Edam.Data.Lexicon.dll</HintPath>
     </Reference>
@@ -312,5 +320,11 @@
     <Reference Include="Edam.Xml">
       <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Xml\bin\Debug\net6.0\Edam.Xml.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\Lexicon\TextSimilarityScoreViewerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

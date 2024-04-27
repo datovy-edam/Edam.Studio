@@ -17,6 +17,8 @@ namespace Edam.WinUI.Controls.DataModels
 
       public static ProjectItem ToObservable(FolderFileItemInfo item)
       {
+         if (item == null) return null;
+
          ProjectItem p = new ProjectItem(item);
          foreach(var c in item.Children)
          {

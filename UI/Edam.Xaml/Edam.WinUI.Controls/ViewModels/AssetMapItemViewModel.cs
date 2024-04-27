@@ -17,6 +17,7 @@ using Edam.WinUI.Controls.DataModels;
 using Edam.WinUI.Controls.Assets;
 using Edam.Data.Asset;
 using Edam.Data.AssetUseCases;
+using Edam.Data.Lexicon;
 
 namespace Edam.WinUI.Controls.ViewModels
 {

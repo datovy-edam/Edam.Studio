@@ -18,6 +18,7 @@ using Edam.WinUI.Controls.Common;
 using Edam.WinUI.Controls.Booklets;
 using Edam.Data.Books;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
 
 namespace Edam.WinUI.Controls.ViewModels
 {
@@ -59,6 +60,11 @@ namespace Edam.WinUI.Controls.ViewModels
       /// <param name="type">Text or Code cell type</param>
       public void AddCell(BookletCellType type)
       {
+         if (Context.SelectedItem == null)
+         {
+            return;
+         }
+
          if (Model == null || Model.Book != Context.UseCase.Book)
          {
             Model = new BookModel(Context);

@@ -68,6 +68,11 @@ namespace Edam.WinUI.Controls.DataModels
 
       public ProjectItem(ItemBaseInfo item)
       {
+         if (item == null)
+         {
+            return;
+         }
+
          InitializeVisibility(false);
          IconTypeNo = (int)item.Type;
          SelectedText = item.NameFull;
