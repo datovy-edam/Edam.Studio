@@ -79,8 +79,10 @@ namespace Edam.WinUI.Controls.DataModels
             {
                string sourceText = sitem.GetAnnotation().Description;
                string targetText = titem.GetAnnotation().Description;
+
                ITextSimilarityScore result = TextSimilarityService.
                   GetSimilarityScore(sourceText, targetText);
+
                if (result != null)
                {
                   if (result.Results != null && !result.Results.Success)
