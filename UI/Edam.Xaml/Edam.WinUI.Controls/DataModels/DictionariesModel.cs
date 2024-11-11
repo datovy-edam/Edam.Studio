@@ -15,6 +15,7 @@ using DocumentFormat.OpenXml.InkML;
 using Edam.Data.AssetSchema;
 using System.Collections.ObjectModel;
 using Jsonata.Net.Native.Json;
+using Edam.Data.Dictionary;
 
 namespace Edam.WinUI.Controls.DataModels
 {
@@ -26,8 +27,8 @@ namespace Edam.WinUI.Controls.DataModels
 
       public DataMapContext DataMapContext { get; set; }
 
-      public ObservableCollection<DictionaryEntryInfo> Entries
-         { get; set; } = new ObservableCollection<DictionaryEntryInfo>();
+      public ObservableCollection<DictionaryItemInfo> Items
+         { get; set; } = new ObservableCollection<DictionaryItemInfo>();
 
       public NotificationEvent ManageNotification { get; set; }
 
@@ -50,7 +51,7 @@ namespace Edam.WinUI.Controls.DataModels
       /// <param name="booklet"></param>
       public void Define(BookletInfo booklet)
       {
-         List<DictionaryEntryInfo> items = new List<DictionaryEntryInfo>();
+         List<DictionaryItemInfo> items = new List<DictionaryItemInfo>();
          foreach (var sitem in DataMapContext.SourceItems)
          {
             foreach (var titem in DataMapContext.TargetItems)
@@ -63,7 +64,7 @@ namespace Edam.WinUI.Controls.DataModels
 
                foreach (var item in items)
                {
-                  Entries.Add(item);
+                  Items.Add(item);
                }
             }
          }
@@ -73,7 +74,7 @@ namespace Edam.WinUI.Controls.DataModels
          {
             NotificationArgs args = new NotificationArgs();
             args.Type = NotificationType.ExecuteItem;
-            args.EventData = Entries;
+            args.EventData = Items;
             args.MessageText = DICTIONARIES_UPDATE;
             ManageNotification(this, args);
          }
