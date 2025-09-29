@@ -8,8 +8,8 @@
 
   <Identity
     Name="f4cc7158-940a-46c7-a1b3-27c41674f5d2"
-    Publisher="CN=KnowTech Inc."
-    Version="1.0.0.0" />
+    Publisher="CN=esobr"
+    Version="1.0.1.0" />
 
   <Properties>
     <DisplayName>Edam.Studio</DisplayName>

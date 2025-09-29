@@ -1,17 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>Edam.Studio</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Platforms>x86;x64;ARM64</Platforms>
+    <Platforms>x64</Platforms>
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
-    <PackageCertificateThumbprint>5EA355E978382173A3A9B7194C02DDDFF6189445</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>FA07203CA883694B4DCD081E1E038214C5F188B3</PackageCertificateThumbprint>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
@@ -23,6 +23,8 @@
     <AppInstallerUri>c:/temp/edam.studio.pack</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <PackageIcon>edam.logo.png</PackageIcon>
+    <PlatformTarget>x64</PlatformTarget>
+    <SignAssembly>False</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Content Remove="Assets\edam.logo.png" />
