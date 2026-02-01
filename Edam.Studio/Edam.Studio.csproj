@@ -27,6 +27,12 @@
     <SignAssembly>False</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="BundleArtifacts\**" />
+    <EmbeddedResource Remove="BundleArtifacts\**" />
+    <None Remove="BundleArtifacts\**" />
+    <Page Remove="BundleArtifacts\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Remove="Assets\edam.logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -151,4 +157,7 @@
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
+  <ItemGroup>
+    <PRIResource Remove="BundleArtifacts\**" />
+  </ItemGroup>
 </Project>
