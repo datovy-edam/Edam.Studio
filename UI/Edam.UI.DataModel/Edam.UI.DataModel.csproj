@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>Edam.UI.DataModel</RootNamespace>
-    <RuntimeIdentifiers>win10-x86;win10-x64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
@@ -19,13 +19,13 @@
 
   <ItemGroup>
     <Reference Include="Edam.Data.Templates">
-      <HintPath>..\..\..\..\Edam.Libraries\Data\Edam.Data.Templates\bin\Debug\net6.0\Edam.Data.Templates.dll</HintPath>
+      <HintPath>..\..\..\..\Edam.Libraries\Data\Edam.Data.Templates\bin\Debug\net9.0\Edam.Data.Templates.dll</HintPath>
     </Reference>
     <Reference Include="Edam.DataObjects">
-      <HintPath>..\..\..\..\Edam.Libraries\Data\Edam.DataObjects\bin\Debug\net6.0\Edam.DataObjects.dll</HintPath>
+      <HintPath>..\..\..\..\Edam.Libraries\Data\Edam.DataObjects\bin\Debug\net9.0\Edam.DataObjects.dll</HintPath>
     </Reference>
     <Reference Include="Edam.System">
-      <HintPath>..\..\..\..\Edam.Libraries\System\Edam.System\bin\Debug\net6.0\Edam.System.dll</HintPath>
+      <HintPath>..\..\..\..\Edam.Libraries\System\Edam.System\bin\Debug\net9.0\Edam.System.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
