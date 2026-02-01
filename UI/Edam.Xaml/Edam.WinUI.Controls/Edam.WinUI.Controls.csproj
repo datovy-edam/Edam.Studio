@@ -61,6 +61,21 @@
   <ItemGroup>
       <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
       <PackageReference Include="DocumentFormat.OpenXml" Version="2.19.0" />
+      <PackageReference Include="Edam.Application" Version="1.0.0" />
+      <PackageReference Include="Edam.B2b" Version="1.0.0" />
+      <PackageReference Include="Edam.Data.Asset.Services" Version="1.0.0" />
+      <PackageReference Include="Edam.Data.AssetDb" Version="1.0.0" />
+      <PackageReference Include="Edam.Data.AssetMapping" Version="1.0.0" />
+      <PackageReference Include="Edam.Data.Assets" Version="1.0.0" />
+      <PackageReference Include="Edam.Data.Dictionary" Version="1.0.0" />
+      <PackageReference Include="Edam.Data.Lexicon" Version="1.0.0" />
+      <PackageReference Include="Edam.Data.Schema" Version="1.0.0" />
+      <PackageReference Include="Edam.Data.Templates" Version="1.0.0" />
+      <PackageReference Include="Edam.DataObjects" Version="1.0.1" />
+      <PackageReference Include="Edam.Json" Version="1.0.0" />
+      <PackageReference Include="Edam.Language.Python" Version="1.0.0" />
+      <PackageReference Include="Edam.System" Version="1.0.0" />
+      <PackageReference Include="Edam.Xml" Version="1.0.0" />
       <PackageReference Include="Jsonata.Net.Native" Version="2.4.1" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.25" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
@@ -274,54 +289,6 @@
 
   <ItemGroup>
     <Resource Remove="Controls\Utilities\DiagnosticsLogControl.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Edam.Application">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Application\Edam.Application\bin\Debug\net9.0\Edam.Application.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.B2b">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.B2b\bin\Debug\net9.0\Edam.B2b.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Data.Asset.Services">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Assets.Services\bin\Debug\net9.0\Edam.Data.Asset.Services.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Data.AssetDb">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.AssetDb\bin\Debug\net9.0\Edam.Data.AssetDb.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Data.AssetMapping">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.AssetMapping\bin\Debug\net9.0\Edam.Data.AssetMapping.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Data.Assets">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Assets\bin\Debug\net9.0\Edam.Data.Assets.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Data.Dictionary">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Dictionary\bin\Debug\net9.0\Edam.Data.Dictionary.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Data.Lexicon">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Vocabulary\bin\Debug\net9.0\Edam.Data.Lexicon.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Data.Schema">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Schema\bin\Debug\net9.0\Edam.Data.Schema.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Data.Templates">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Data.Templates\bin\Debug\net9.0\Edam.Data.Templates.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.DataObjects">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.DataObjects\bin\Debug\net9.0\Edam.DataObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Json">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Json\bin\Debug\net9.0\Edam.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Language.Python">
-      <HintPath>..\..\..\..\..\Edam.Libraries\AI\Edam.Language.Python\bin\Debug\net9.0\Edam.Language.Python.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.System">
-      <HintPath>..\..\..\..\..\Edam.Libraries\System\Edam.System\bin\Debug\net9.0\Edam.System.dll</HintPath>
-    </Reference>
-    <Reference Include="Edam.Xml">
-      <HintPath>..\..\..\..\..\Edam.Libraries\Data\Edam.Xml\bin\Debug\net9.0\Edam.Xml.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>
